@@ -1,0 +1,14 @@
+.container{
+    border: 1px solid black;
+    max-width: fit-content;
+    list-style: none;
+    max-height: 616px;
+    overflow-y: scroll;
+}
+
+.container li {
+    width: 500px;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
