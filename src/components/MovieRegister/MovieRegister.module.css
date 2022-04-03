@@ -24,18 +24,54 @@
     box-shadow: 0 0 3px 1px black;
 }
 
-.container .boxButton {
+.boxButton {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
+    width: 100;
 }
 
-.container .boxButton button {
+.boxButton button {
     padding: 20px;
     width: 150px;
     background-color: orange;
     border: 0;
     font-size: 18px;
     cursor: pointer;
+}
+
+.displayNone {
+    display: none;
+}
+
+.confirmationModal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(31, 31, 31, 0.432);
+    flex-direction: column;
+}
+
+.confirmationModal .box {
+    background-color: white;
+    width: 350px;
+    font-size: 25px;
+    padding: 30px;
+    height: 175px;
+    position: relative;
+    bottom: 48px;
+    border-radius: 7px;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 0 4px 2px black;
+}
+
+.marginButton { 
+    margin-top: 20px;
 }

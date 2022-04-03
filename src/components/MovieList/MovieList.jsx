@@ -11,15 +11,17 @@ const MovieList = ( ) => {
     },[])
     
     return ( 
-            <ul className={style.container}>
-                {moviesContext.data.movieList.map ( ( movie, index) => {
-                    return ( 
-                        <React.Fragment key={index}>
-                            <li>{movie.name}</li>
-                            <hr/>
-                        </React.Fragment>   
-                    )})}
-            </ul>)
+            <React.Fragment>
+                {moviesContext.data.movieList.length > 0 && <ul className={style.container}>
+                    {moviesContext.data.movieList.map ( ( movie, index) => {
+                        return ( 
+                            <React.Fragment key={index}>
+                                <li>{movie.name}</li>
+                            </React.Fragment>   
+                        )})}
+                    </ul>}
+                    {moviesContext.data.movieList.length === 0 && <div className={style.emptyList}> No movies found in the list.</div>}
+            </React.Fragment>)
 };
 
 

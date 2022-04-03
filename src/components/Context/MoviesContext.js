@@ -18,17 +18,25 @@ const MovieProvider =  ( props ) =>  {
         try {
             const newMovieList =  await axios.get("https://fir-connection-ee7a7-default-rtdb.firebaseio.com/Movies.json")
 
-            const objKeys = Object.keys(newMovieList.data);
+            if  ( newMovieList.data !== null){
 
-            const newList = [];
+                const objKeys = Object.keys(newMovieList.data);
 
-            objKeys.map ( key=> {
-                newList.push({name: newMovieList.data[key].name})
-            });
+                const newList = [];
+
+                objKeys.map ( key=> {
+                    newList.push({name: newMovieList.data[key].name})
+                });
+                
+                setMovieList( prevState => {
+                    return {...prevState, movieList:newList}
+                });
+            } else {
+                setMovieList( prevState => {
+                    return {...prevState, movieList:[]}
+                });
+            }
             
-            setMovieList( prevState => {
-                return {...prevState, movieList:newList}
-            });
 
         } catch ( err ){
             console.log(err)
